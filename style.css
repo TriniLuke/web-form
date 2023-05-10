@@ -102,7 +102,3 @@ form div input.valid {
 form div input.invalid {
   border: 2px solid rgb(255, 0, 0);
 }
-
-/* .error-input {
-  border: 2px solid rgb(255, 0, 0);
-} */
