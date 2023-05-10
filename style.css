@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(0, 255, 255, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 1.0);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(128, 128, 128, 0.8);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+form div {
+  position: relative;
+}
+
+form div input,
+form div select {
+  width: 30rem;
+  font-size: medium;
+  color: rgba(0, 0, 0, 0.9);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.name {
+  display: flex;
+  gap: 5px;
+  width: 30rem;
+}
+
+.name input {
+  width: 14.9rem;
+}
+
+label,
+.name input label {
+  position: absolute;
+  padding-top: 7px;
+  padding-left: 5px;
+  left: 5px;
+  transition: all 0.5s ease;
+}
+
+form div input:focus+label,
+.name div input:focus+label,
+form div input:valid+label {
+  font-size: small;
+  top: -20px;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  color: rgba(141, 45, 45, 0.9);
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(141, 45, 45, 0.9);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.error-message {
+  color: rgb(255, 0, 0);
+}
+
+form div input.valid {
+  border: 2px solid rgba(0, 128, 0);
+}
+
+form div input.invalid {
+  border: 2px solid rgb(255, 0, 0);
+}
+
+/* .error-input {
+  border: 2px solid rgb(255, 0, 0);
+} */

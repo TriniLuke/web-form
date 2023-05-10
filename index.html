@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <title>Web Form</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <form class="form" id="form">
+      <h1><span>Web</span> Form</h1>
+      <div class="name">
+        <div>
+          <input type="text" id="first-name" minlength="2" onkeyup="validateFirstName()" required>
+          <label for="first-name">First Name</label>
+        </div>
+        <div>
+          <input type="text" id="last-name" minlength="2" onkeyup="validateLastName()" required>
+          <label for="last-name">Last Name</label>
+        </div>
+      </div>
+
+      <div class="mail">
+        <input type="email" id="email" maxlength="100" onchange="validateEmail()" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="password">
+        <input type="password" id="password" minlength="8" onchange="validatePassword()" required>
+        <label for="password">Password</label>
+      </div>
+
+      <div class="password">
+        <input type="password" id="confirm-password" minlength="8" onchange="validatePassword()" required>
+        <label for="confirm-password">Confirm Password</label>
+      </div>
+
+      <div class="country">
+        <input type="text" id="country" onchange="validateCountryZip()" required>
+        <label for="country">Country</label>
+      </div>
+
+      <div class="zip">
+        <input type="text" id="zip" maxlength="5" onchange="validateCountryZip()" required>
+        <label for="zip">Zip</label>
+      </div>
+
+      <div class="button-holder">
+        <button type="submit" id="submit" onsubmit="return validate()">SUBMIT</button>
+      </div>
+
+      <div class="error-message" id="error-message"></div>
+    </form>
+  </div>
+</body>
+
+</html>
