@@ -12,12 +12,12 @@ const validateFirstName = () => {
 
   if(!firstName.checkValidity()) {
     error.innerText = firstName.validationMessage;
-    firstName.classList.add('invalid')
+    firstName.classList.add('invalid');
     return false;
   }
-  error.innerText = ''
-  firstName.classList.remove('invalid')
-  firstName.classList.add('valid')
+  error.innerText = '';
+  firstName.classList.remove('invalid');
+  firstName.classList.add('valid');
   return true;
 }
 
@@ -25,12 +25,12 @@ const validateLastName = () => {
 
   if(!lastName.checkValidity()) {
     error.innerText = lastName.validationMessage;
-    lastName.classList.add('invalid')
+    lastName.classList.add('invalid');
     return false;
   }
-  error.innerText = ''
-  lastName.classList.remove('invalid')
-  lastName.classList.add('valid')
+  error.innerText = '';
+  lastName.classList.remove('invalid');
+  lastName.classList.add('valid');
   return true;
 }
 
@@ -38,17 +38,16 @@ const validateEmail = () => {
  
   if(!email.checkValidity()) {
     error.innerText = email.validationMessage;
-    email.classList.add('invalid')
+    email.classList.add('invalid');
     return false;
   }
-  error.innerText = ''
-  email.classList.remove('invalid')
-  email.classList.add('valid')
+  error.innerText = '';
+  email.classList.remove('invalid');
+  email.classList.add('valid');
   return true;
 }
 
 const validatePassword = () => {
-
   if(!password.checkValidity()) {
     error.innerText = password.validationMessage;
     password.classList.add('invalid');
@@ -59,7 +58,7 @@ const validatePassword = () => {
     passwordConfirm.classList.add('invalid');
     return false;
   } 
-  error.innerText = ''
+  error.innerText = '';
   password.classList.remove('invalid');
   password.classList.add('valid');
   passwordConfirm.classList.remove('invalid');
@@ -70,29 +69,23 @@ const validatePassword = () => {
 const validateCountryZip = () => {
   if(!country.checkValidity()) {
     error.innerText = country.validationMessage;
-    country.classList.add('invalid')
+    country.classList.add('invalid');
     return false;
   }
-  if(country.value !== 'USA' || country.value !== 'America') {
-    zip.removeAttribute("required")
+  if(country.value === 'USA' || country.value === 'America') {
+    zip.setAttribute('required')
   }
-  error.innerText = ''
-  country.classList.add('valid')
+  error.innerText = '';
+  country.classList.remove('invalid');
+  country.classList.add('valid');
+  zip.removeAttribute("required");
   return true;
 }
 
-/* const validateZip = () => {
-  if(!zip.checkValidity()) {
-    error.innerText = zip.validationMessage;
-    return false;
-  }
-} */
-
 function validate(e) {
-  
+  e.preventDefault();
   if(!validateFirstName() || !validateLastName() || !validateEmail() || !validatePassword() || !validateCountryZip()) {
     return false;
   }
-  e.preventDefault();
 }
 
