@@ -49,7 +49,7 @@
       </div>
 
       <div class="zip">
-        <input type="text" id="zip" onchange="validateCountryZip()" required>
+        <input type="text" id="zip" pattern="^\d{5}(?:[-\s]\d{4})?$" onchange="validateCountryZip()" required>
         <label for="zip">Zip</label>
       </div>
 
